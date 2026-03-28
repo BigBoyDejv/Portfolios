@@ -55,18 +55,18 @@ const Index = () => {
     const handleScrollTrigger = () => {
       // Prevent multiple triggers
       if (bootPhase !== "ready") return;
-      
+
       setBootPhase("zooming");
-      
+
       const startTime = Date.now();
       const duration = 1200; // Aggressive fast zoom
-      
+
       const animateZoom = () => {
         const elapsed = Date.now() - startTime;
         const progress = Math.min(elapsed / duration, 1);
         // Exponential ease in for a dramatic pulling-in effect
         const eased = progress < 0.5 ? 4 * Math.pow(progress, 3) : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-        
+
         setAutoZoomProgress(eased);
         if (progress < 1) {
           requestAnimationFrame(animateZoom);
@@ -97,7 +97,7 @@ const Index = () => {
   // Lock scroll completely until the sequence is completed, 
   // we capture wheel manually for the trigger.
   const isSequenceCompleted = bootPhase === "completed";
-  
+
   useEffect(() => {
     if (!isSequenceCompleted) {
       document.body.style.overflow = "hidden";
@@ -144,26 +144,6 @@ const Index = () => {
       {/* 2D Boot Sequence Overlay */}
       {!isMobile && (
         <BootSequence bootPhase={bootPhase} showContent={isSequenceCompleted} />
-      )}
-
-      {/* Mobile fallback */}
-      {isMobile && (
-        <div className="fixed inset-0 z-20 flex items-center justify-center pointer-events-none">
-          <div className="text-center px-6">
-            <h1
-              className="text-4xl font-bold font-display mb-3 text-foreground"
-              style={{
-                textShadow:
-                  "0 0 30px hsl(270 80% 65% / 0.6), 0 0 80px hsl(270 80% 65% / 0.3)",
-              }}
-            >
-              DAVIDLOPER
-            </h1>
-            <p className="text-muted-foreground text-sm font-mono">
-              Creative Developer & Designer
-            </p>
-          </div>
-        </div>
       )}
 
       {/* Main content */}
