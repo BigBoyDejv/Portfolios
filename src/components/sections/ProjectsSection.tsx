@@ -66,6 +66,8 @@ const ProjectsSection = () => {
               rotateY: -2,
             }}
             style={{ transformStyle: "preserve-3d" }}
+          // Voliteľné: Ak chceš, aby celá karta bola klikateľná, odkomentuj riadok nižšie:
+          // onClick={() => window.open(project.link, "_blank")}
           >
             {/* Gradient bg */}
             <div
@@ -77,9 +79,25 @@ const ProjectsSection = () => {
                 <h3 className="text-xl font-bold font-display text-foreground group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <div className="flex gap-2 text-muted-foreground">
-                  <Github size={16} className="hover:text-primary transition-colors" />
-                  <ExternalLink size={16} className="hover:text-primary transition-colors" />
+                <div className="flex gap-3 text-muted-foreground relative z-20">
+                  <a
+                    href="https://github.com/BigBoyDejv"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors p-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Github size={18} />
+                  </a>
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors p-1"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ExternalLink size={18} />
+                  </a>
                 </div>
               </div>
 
