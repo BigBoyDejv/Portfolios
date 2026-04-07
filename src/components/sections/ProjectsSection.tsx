@@ -14,7 +14,7 @@ const projects = [
     description: "I developed a complete gym management system where owners, receptionists, trainers, and customers have their own roles. Members can buy memberships, book trainings, and track their gym progress, while the owner can monitor all statistics and operations.",
     tags: ["SpringBoot", "Html", "Css", "Thymeleaf", "JS", "Postgres",],
     color: "from-accent/30 to-primary/20",
-    link: "https://fitnessapp-5ogv.onrender.com",
+    link: "https://fitko-kosice.vercel.app",
   },
   {
     title: "HammerIT",
@@ -30,6 +30,15 @@ const projects = [
     color: "from-accent/20 to-primary/30",
     link: "https://plte.jan-rusin3038.workers.dev",
   },
+  {
+    title: "MO SRZ Spišská Belá",
+    description: "Website for a fishing club featuring news, online permit purchases, photo gallery, contact info, and general club information – all in one clean, accessible platform.",
+    tags: ["React", "Next.js", "Supabase", "Tailwind", "JS", "TypeScript", "Vercel", "Cloudinary"],
+    color: "from-accent/20 to-primary/30",
+    link: "https://mosrzspisskabela.vercel.app",
+  },
+
+
 ];
 
 const ProjectsSection = () => {

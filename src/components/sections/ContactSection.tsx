@@ -16,10 +16,10 @@ const ContactSection = () => {
     setIsSending(true);
 
     emailjs.sendForm(
-      'service_9xy62sb',   // Service ID
-      'template_y1hno4q',  // Template ID
+      'service_9xy62sb',
+      'template_y1hno4q',
       formRef.current,
-      '9KMLskRPB9IM5vci8'    // Public Key
+      '9KMLskRPB9IM5vci8'
     )
       .then(() => {
         setIsSent(true);

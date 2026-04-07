@@ -61,7 +61,7 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             {[
-              { icon: MapPin, text: "Remote Worldwide" },
+              { icon: MapPin, text: "Full remote" },
               { icon: Briefcase, text: "Open to Work" },
             ].map(({ icon: Icon, text }) => (
               <div
